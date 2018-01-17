@@ -5,23 +5,23 @@ import delay from './delay';
 // All calls return promises.
 const expenseTypes = [
   {
-    id: "1",
+    id: 1,
     name: 'Home Loan'
   },
   {
-    id: "2",
+    id: 2,
     name: 'Dev Loan'
   },
   {
-    id: "3",
+    id: 3,
     name: 'Maid'
   },
   {
-    id: "4",
+    id: 4,
     name: 'Miscellaneous'
   },
   {
-    id: "5",
+    id: 5,
     name: 'Recharge'
   }
 ];
@@ -54,7 +54,7 @@ class ExpenseTypeApi {
           reject(`Name must be at least ${minExpenseTypeLength} characters.`);
         }
 
-        if (name.id) {
+        if (expenseType.id) {
           const existingExpenseTypeIndex = expenseTypes.findIndex(a => a.id == expenseType.id);
           expenseTypes.splice(existingExpenseTypeIndex, 1, expenseType);
         } else {
@@ -73,9 +73,7 @@ class ExpenseTypeApi {
   static deleteExpenseType(expenseTypeId) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        const indexToDelete = expenseTypes.findIndex(expenseType => {
-          expenseType.id == expenseTypeId;
-        });
+        const indexToDelete = expenseTypes.findIndex(expenseType =>  expenseType.id == expenseTypeId);
         expenseTypes.splice(indexToDelete, 1);
         resolve();
       }, delay);

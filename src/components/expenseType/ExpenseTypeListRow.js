@@ -1,16 +1,17 @@
-import React, {PropTypes} from 'react';
-import {Link} from 'react-router';
+import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 
-const ExpenseTypeListRow = ({expenseType}) => {
+const ExpenseTypeListRow = ({ expenseType }) => {
   return (
     <tr>
-      <td>{expenseType.name}</td>
+      <td><Link to={'/expensetype/' + expenseType.id}>{expenseType.name}</Link></td>
+      <td><Link to={'/deleteexpensetype/' + expenseType.id}>Delete</Link></td>
     </tr>
   );
 };
 
 ExpenseTypeListRow.propTypes = {
-    expenseType: PropTypes.object.isRequired
+  expenseType: PropTypes.object.isRequired
 };
 
 export default ExpenseTypeListRow;

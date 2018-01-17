@@ -6,6 +6,22 @@ export default function expenseTypeReducer(state = initialState.expenseTypes, ac
     case types.LOAD_EXPENSE_TYPES_SUCCESS:
       return action.expenseTypes;
 
+    case types.CREATE_EXPENSE_TYPE_SUCCESS:
+      return [
+        ...state,
+        Object.assign({}, action.expenseType)
+      ];
+
+    case types.UPDATE_EXPENSE_TYPE_SUCCESS:
+      return [
+        ...state.filter(expenseType => expenseType.id !== action.expenseType.id),
+        Object.assign({}, action.expenseType)
+      ];
+
+    case types.DELETE_EXPENSE_TYPE_SUCCESS:
+      return [
+        ...state.filter(expenseType => expenseType.id !== action.expenseTypeId)
+      ];
     default:
       return state;
   }
