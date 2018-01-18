@@ -32,12 +32,12 @@ export class DeleteExpenseTypePage extends React.Component {
                 <h1>Are you sure you want to delete?</h1>
                 <input
                     type="submit"
-                    value='Cancel'
+                    value="Cancel"
                     className="btn"
                     onClick={this.cancel} />
                 <input
                     type="submit"
-                    value='Delete'
+                    value="Delete"
                     className="btn btn-primary"
                     onClick={this.deleteExpenseType} />
             </div>
@@ -50,7 +50,10 @@ DeleteExpenseTypePage.contextTypes = {
     router: PropTypes.object
 };
 
-
+DeleteExpenseTypePage.propTypes = {
+    actions: PropTypes.object.isRequired,
+    expenseTypeId: PropTypes.number.isRequired
+};
 
 function mapStateToProps(state, ownProps) {
     const expenseTypeId = Number.parseInt(ownProps.params.id);
