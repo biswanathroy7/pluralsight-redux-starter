@@ -1,4 +1,5 @@
 export default {
-    expenseTypes: []
+    expenseTypes: [],
+    expenseMasters: []
   };
   
