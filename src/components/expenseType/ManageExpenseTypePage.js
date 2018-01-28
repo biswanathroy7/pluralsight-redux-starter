@@ -5,7 +5,6 @@ import ExpenseTypeForm from './ExpenseTypeForm';
 import * as expenseTypeActions from '../../actions/expenseTypeActions';
 import toastr from 'toastr';
 
-
 export class ManageExpenseTypePage extends React.Component {
     constructor(props, context) {
         super(props, context);
@@ -60,7 +59,7 @@ export class ManageExpenseTypePage extends React.Component {
 
         );
     }
-};
+}
 
 function getExpenseTypeById(expenseTypes, id) {
     const expenseType = expenseTypes.filter(expenseType => expenseType.id == id);
@@ -91,5 +90,9 @@ ManageExpenseTypePage.contextTypes = {
     router: PropTypes.object
 };
 
+ManageExpenseTypePage.propTypes = {
+    expenseType: PropTypes.object.isRequired,
+    actions: PropTypes.object.isRequired
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ManageExpenseTypePage);
