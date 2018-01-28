@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as expenseTypeActions from '../../actions/expenseTypeActions';
-import toastr from 'toastr';
 
 export class DeleteExpenseTypePage extends React.Component {
     constructor(props, context) {
@@ -24,7 +23,6 @@ export class DeleteExpenseTypePage extends React.Component {
     }
 
     redirect() {
-        toastr.success('Expense Type Deleted');
         this.context.router.push('/expensetypes');
     }
 
