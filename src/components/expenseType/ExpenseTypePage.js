@@ -1,10 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { PropTypes } from 'react';
+import { Link, browserHistory } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as expenseTypeActions from '../../actions/expenseTypeActions';
 import ExpenseTypeList from './ExpenseTypeList';
-import {browserHistory} from 'react-router';
 
 class ExpenseTypePage extends React.Component {
     constructor(props, context) {
@@ -42,5 +41,9 @@ function mapDispatchToProps(dispatch) {
         action: bindActionCreators(expenseTypeActions, dispatch)
     };
 }
+
+ExpenseTypePage.propTypes = {
+    expenseTypes: PropTypes.array.isRequired
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ExpenseTypePage);

@@ -60,7 +60,7 @@ export class ManageExpenseTypePage extends React.Component {
 
         );
     }
-};
+}
 
 function getExpenseTypeById(expenseTypes, id) {
     const expenseType = expenseTypes.filter(expenseType => expenseType.id == id);
@@ -86,6 +86,12 @@ function mapDispatchToProps(dispatch) {
         actions: bindActionCreators(expenseTypeActions, dispatch)
     };
 }
+
+ManageExpenseTypePage.propTypes = {
+    expenseType: PropTypes.object.isRequired,
+    actions: PropTypes.object.isRequired
+};
+  
 
 ManageExpenseTypePage.contextTypes = {
     router: PropTypes.object
