@@ -25,7 +25,7 @@ export function loadExpenseTypes() {
         return ExpenseTypeApi.getAllExpenseTypes().then(expenseTypes => {
             dispatch(loadExpenseTypesSuccess(expenseTypes));
         }).catch(error => {
-            throw (error);
+            throw (error)
         });
     };
 }

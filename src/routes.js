@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './components/App';
 import ExpenseTypePage from './components/expenseType/ExpenseTypePage';
-import { ManageExpenseTypePage } from './components/expenseType/ManageExpenseTypePage';
-import { DeleteExpenseTypePage } from './components/expenseType/DeleteExpenseTypePage';
+import ManageExpenseTypePage from './components/expenseType/ManageExpenseTypePage';
+import DeleteExpenseTypePage from './components/expenseType/DeleteExpenseTypePage';
 
 export default (
   <Route path="/" component={App}>
