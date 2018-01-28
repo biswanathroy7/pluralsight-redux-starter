@@ -46,7 +46,7 @@ export class ManageExpenseTypePage extends React.Component {
 
     redirect() {
         this.setState({ saving: false });
-        toastr.success('Course saved');
+        toastr.success('Expense Type saved');
         this.context.router.push('/expensetypes');
     }
 
